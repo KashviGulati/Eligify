@@ -7,18 +7,10 @@ const Results = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const token = localStorage.getItem("access");
-
-        const response = await fetch("http://127.0.0.1:8000/api/eligibility/", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await fetch("http://127.0.0.1:8000/api/eligibility/");
 
         if (!response.ok) {
-          throw new Error("Unauthorized or API error");
+          throw new Error("API error");
         }
 
         const result = await response.json();
@@ -47,48 +39,89 @@ const Results = () => {
   }
 
   return (
-    <div className="mt-16 px-6">
-      <h2 className="text-3xl font-semibold text-textDark mb-6 text-center">
+    <div className="mt-20 px-6 max-w-5xl mx-auto">
+      <h2 className="text-3xl font-semibold text-textDark mb-10 text-center">
         Your Eligibility Results
       </h2>
 
       {/* FULL MATCHES */}
-      <div className="mb-10">
-        <h3 className="text-xl font-semibold mb-4 text-green-700">
+      <div className="mb-12">
+        <h3 className="text-xl font-semibold mb-6 text-sage">
           Eligible Schemes
         </h3>
 
-        {data.full_matches && data.full_matches.length > 0 ? (
-          data.full_matches.map((sch: any) => (
-            <div key={sch.id} className="bg-white p-4 rounded-xl shadow mb-4">
-              <h4 className="font-semibold">{sch.name}</h4>
-              <p>Confidence: {sch.confidence}%</p>
-            </div>
-          ))
-        ) : (
-          <p>No eligible schemes</p>
-        )}
+        <div className="grid gap-6">
+          {data.full_matches?.length > 0 ? (
+            data.full_matches.map((sch: any, index: number) => (
+              <div
+                key={index}
+                className="bg-white/80 backdrop-blur-md border border-sageLight rounded-2xl p-6 shadow-md hover:shadow-lg transition"
+              >
+                <h4 className="text-lg font-semibold text-textDark mb-2">
+                  {sch.name}
+                </h4>
+
+                <p className="text-sm text-gray-600 mb-2">
+                  {sch.ministry}
+                </p>
+
+                <div className="flex justify-between items-center">
+                  <span className="text-sage font-medium">
+                    ₹ {sch.amount}
+                  </span>
+
+                  <span className="text-green-600 font-semibold">
+                    {sch.eligibility?.confidence}% match
+                  </span>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p>No eligible schemes</p>
+          )}
+        </div>
       </div>
 
       {/* PARTIAL MATCHES */}
       <div>
-        <h3 className="text-xl font-semibold mb-4 text-yellow-600">
+        <h3 className="text-xl font-semibold mb-6 text-yellow-600">
           Partially Eligible
         </h3>
 
-        {data.partial_matches && data.partial_matches.length > 0 ? (
-          data.partial_matches.map((sch: any) => (
-            <div key={sch.id} className="bg-white p-4 rounded-xl shadow mb-4">
-              <h4 className="font-semibold">{sch.name}</h4>
-              <p>Confidence: {sch.confidence}%</p>
-              <p className="text-sm text-red-500">
-                {sch.reasons?.join(", ")}
-              </p>
-            </div>
-          ))
-        ) : (
-          <p>No partial matches</p>
-        )}
+        <div className="grid gap-6">
+          {data.partial_matches?.length > 0 ? (
+            data.partial_matches.map((sch: any, index: number) => (
+              <div
+                key={index}
+                className="bg-white/70 border border-gray-200 rounded-2xl p-6 shadow-sm"
+              >
+                <h4 className="text-lg font-semibold text-textDark mb-2">
+                  {sch.name}
+                </h4>
+
+                <p className="text-sm text-gray-600 mb-2">
+                  {sch.ministry}
+                </p>
+
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-sage font-medium">
+                    ₹ {sch.amount}
+                  </span>
+
+                  <span className="text-yellow-600 font-semibold">
+                    {sch.eligibility?.confidence}% match
+                  </span>
+                </div>
+
+                <div className="text-sm text-red-500">
+                  {sch.eligibility?.reasons?.join(", ")}
+                </div>
+              </div>
+            ))
+          ) : (
+            <p>No partial matches</p>
+          )}
+        </div>
       </div>
     </div>
   );
