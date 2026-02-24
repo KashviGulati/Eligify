@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-const ProfileCard = () => {
+type Props = {
+  onSave: () => void;
+};
+
+const ProfileCard = ({ onSave }: Props) => {
   const [formData, setFormData] = useState({
     age: "",
     annual_income: "",
@@ -19,31 +23,29 @@ const ProfileCard = () => {
     });
   };
 
-  const handleSubmit = async () => {
-    try {
-      const token = localStorage.getItem("access");
+const handleSubmit = async () => {
+  try {
+    const response = await fetch("http://127.0.0.1:8000/api/profile/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-      const response = await fetch("http://127.0.0.1:8000/api/profile/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(formData),
-      });
+    const data = await response.json();
+    console.log("RESPONSE:", data); // 👈 ADD THIS
 
-      const data = await response.json();
-      console.log(data);
-
-      if (response.ok) {
-        alert("Profile saved!");
-      } else {
-        alert("Error saving profile");
-      }
-    } catch (error) {
-      console.error(error);
+    if (response.ok) {
+      alert("Profile saved!");
+      onSave();
+    } else {
+      alert(JSON.stringify(data)); // 👈 SHOW REAL ERROR
     }
-  };
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   return (
     <div className="mt-16 flex justify-center px-6">

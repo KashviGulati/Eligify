@@ -23,10 +23,8 @@ class StudentProfile(models.Model):
         ('O', 'Other'),
     ]
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, null=True, blank=True)
-
     education_level = models.CharField(max_length=100, null=True, blank=True)
     state = models.CharField(max_length=100, null=True, blank=True)
-    preferred_language = models.CharField(max_length=50, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

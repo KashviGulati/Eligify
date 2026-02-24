@@ -4,29 +4,23 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+from profiles.models import StudentProfile
 
 from .scraper import save_scholarships
 from profiles.models import StudentProfile
 from .eligibility_engine import get_eligible_scholarships
-
+from profiles.serializers import StudentProfileSerializer
 
 class EligibilityView(APIView):
     permission_classes = []
 
     def get(self, request):
         try:
-        # TEMP: get first profile (for demo)
-            profile = StudentProfile.objects.first()
-
-            if not profile:
-                return Response({"error": "No profile found"}, status=404)
-
-        except Exception as e:
-            return Response({"error": str(e)}, status=500)
-
-        results = get_eligible_scholarships(profile)
-
-        return Response(results)
+            profile = StudentProfile.objects.get(user=request.user)
+            serializer = StudentProfileSerializer(profile)
+            return Response(serializer.data)
+        except StudentProfile.DoesNotExist:
+            return Response({"error": "Profile not found"}, status=404)
     
 class ScrapeView(APIView):
     def get(self, request):

@@ -15,7 +15,6 @@ class StudentProfileSerializer(serializers.ModelSerializer):
             'gender',
             'education_level',
             'state',
-            'preferred_language'
         ]
 
         missing = []
