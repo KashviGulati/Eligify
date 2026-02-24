@@ -1,0 +1,73 @@
+/* Page */
+.profile-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5F2E8;
+}
+
+/* Card */
+.profile-card {
+  background: white;
+  padding: 2.8rem;
+  border-radius: 24px;
+  width: 420px; /* 🔥 wider than auth */
+  box-shadow: 
+    0 30px 80px rgba(42,38,53,0.12),
+    0 8px 20px rgba(42,38,53,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Heading */
+.profile-card h2 {
+  font-family: 'DM Serif Display', serif;
+  margin-bottom: 1.5rem;
+  color: #2A2635;
+}
+
+/* Inputs */
+.profile-card input,
+.profile-card select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: 14px;
+  border: 1px solid #E6E2D9;
+  background: #FFFFFF;
+  font-size: 0.95rem;
+  color: #2A2635;
+  transition: 0.2s;
+}
+
+/* Fix alignment */
+.profile-card input,
+.profile-card select {
+  box-sizing: border-box;
+}
+
+/* Focus */
+.profile-card input:focus,
+.profile-card select:focus {
+  outline: none;
+  border-color: #7B6B9E;
+  box-shadow: 0 0 0 3px rgba(123,107,158,0.12);
+}
+
+/* Button */
+.profile-card button {
+  width: 100%;
+  padding: 0.95rem;
+  border-radius: 999px;
+  border: none;
+  background: #7B6B9E;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s;
+  margin-top: 0.5rem;
+}
+
+.profile-card button:hover {
+  background: #5E5080;
+}
