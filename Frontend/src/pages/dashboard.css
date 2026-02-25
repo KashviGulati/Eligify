@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --sage: #9CBD96;
+  --cream: #E1EACD;
+  --ivory: #F5F2E8;
+  --purple: #7B6B9E;
+  --text-dark: #2A2635;
+  --text-soft: #8A8298;
+}
+
+/* Page */
+.dashboard {
+  padding: 2rem;
+  background: var(--ivory);
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Title */
+.title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--text-dark);
+}
+
+.title span {
+  color: var(--purple);
+}
+
+/* Summary */
+.summary {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.summary div {
+  flex: 1;
+  background: white;
+  border: 1px solid var(--cream);
+  padding: 1rem;
+  border-radius: 14px;
+}
+
+.summary p {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+.summary h3 {
+  color: var(--purple);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.tabs button {
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--cream);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tabs button.active {
+  background: var(--purple);
+  color: white;
+}
+
+.tabs button:hover {
+  background: var(--sage);
+  color: white;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: white;
+  padding: 1.3rem;
+  border-radius: 18px;
+  border: 1px solid var(--cream);
+  position: relative;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(156,189,150,0.25);
+}
+
+/* Accent strip */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  border-radius: 18px 18px 0 0;
+  background: linear-gradient(90deg, var(--sage), var(--purple));
+}
+
+/* Top */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card h3 {
+  font-size: 1rem;
+}
+
+/* Badge */
+.badge {
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+}
+
+.badge.full {
+  background: #DFF5E1;
+  color: #2E7D32;
+}
+
+.badge.partial {
+  background: #FFF3CD;
+  color: #856404;
+}
+
+/* Text */
+.ministry {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+.amount {
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: var(--purple);
+}
+
+/* Progress */
+.progress {
+  height: 6px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--sage), var(--purple));
+}
+
+/* Percent */
+.percent {
+  font-size: 0.8rem;
+  color: var(--sage);
+  font-weight: 500;
+}
+
+/* Reasons */
+.reasons {
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  color: #a94442;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  margin-top: 3rem;
+}

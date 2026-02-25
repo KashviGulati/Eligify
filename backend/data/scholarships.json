@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Central Sector Scheme of Scholarships",
+    "education_level": "UG",
+    "gender": "",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 800000,
+    "state": "ALL"
+  },
+  {
+    "name": "Post Matric Scholarship for SC Students",
+    "education_level": "UG",
+    "gender": "",
+    "category": "SC",
+    "income_limit": 250000,
+    "state": "ALL"
+  },
+  {
+    "name": "Post Matric Scholarship for ST Students",
+    "education_level": "UG",
+    "gender": "",
+    "category": "ST",
+    "income_limit": 250000,
+    "state": "ALL"
+  },
+  {
+    "name": "OBC Scholarship Scheme",
+    "education_level": "UG",
+    "gender": "",
+    "category": "OBC",
+    "income_limit": 300000,
+    "state": "ALL"
+  },
+  {
+    "name": "AICTE Pragati Scholarship for Girls",
+    "education_level": "UG",
+    "gender": "F",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 800000,
+    "state": "ALL"
+  },
+  {
+    "name": "AICTE Saksham Scholarship for Disabled Students",
+    "education_level": "UG",
+    "gender": "",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 800000,
+    "state": "ALL"
+  },
+  {
+    "name": "National Means Cum Merit Scholarship",
+    "education_level": "School",
+    "gender": "",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 150000,
+    "state": "ALL"
+  },
+  {
+    "name": "Indira Gandhi Scholarship for Single Girl Child",
+    "education_level": "PG",
+    "gender": "F",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 800000,
+    "state": "ALL"
+  },
+  {
+    "name": "National Fellowship for SC Students",
+    "education_level": "PG",
+    "gender": "",
+    "category": "SC",
+    "income_limit": 800000,
+    "state": "ALL"
+  },
+  {
+    "name": "National Fellowship for OBC Students",
+    "education_level": "PG",
+    "gender": "",
+    "category": "OBC",
+    "income_limit": 800000,
+    "state": "ALL"
+  },
+  {
+    "name": "Merit Scholarship for Minority Students",
+    "education_level": "UG",
+    "gender": "",
+    "category": "GEN",
+    "income_limit": 200000,
+    "state": "ALL"
+  },
+  {
+    "name": "Punjab State Merit Scholarship",
+    "education_level": "UG",
+    "gender": "",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 600000,
+    "state": "Punjab"
+  },
+  {
+    "name": "Delhi Higher Education Scholarship",
+    "education_level": "UG",
+    "gender": "",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 500000,
+    "state": "Delhi"
+  },
+  {
+    "name": "UP Post Matric Scholarship",
+    "education_level": "UG",
+    "gender": "",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 300000,
+    "state": "Uttar Pradesh"
+  },
+  {
+    "name": "Karnataka Vidyasiri Scholarship",
+    "education_level": "UG",
+    "gender": "",
+    "category": "SC,ST,OBC",
+    "income_limit": 200000,
+    "state": "Karnataka"
+  },
+  {
+    "name": "West Bengal Merit Cum Means Scholarship",
+    "education_level": "UG",
+    "gender": "",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 250000,
+    "state": "West Bengal"
+  },
+  {
+    "name": "Bihar Student Credit Scholarship",
+    "education_level": "UG",
+    "gender": "",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 400000,
+    "state": "Bihar"
+  },
+  {
+    "name": "Rajasthan Higher Education Scholarship",
+    "education_level": "UG",
+    "gender": "",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 350000,
+    "state": "Rajasthan"
+  },
+  {
+    "name": "Maharashtra EBC Scholarship",
+    "education_level": "UG",
+    "gender": "",
+    "category": "GEN",
+    "income_limit": 800000,
+    "state": "Maharashtra"
+  },
+  {
+    "name": "Tamil Nadu First Graduate Scholarship",
+    "education_level": "UG",
+    "gender": "",
+    "category": "GEN,OBC,SC,ST",
+    "income_limit": 300000,
+    "state": "Tamil Nadu"
+  }
+]
